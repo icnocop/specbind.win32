@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{854C6593-9DBA-42E9-B703-1421482BBAD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpecBind</RootNamespace>
+    <AssemblyName>SpecBind</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.2.1\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionPipeline\ActionRepository.cs" />
+    <Compile Include="ActionPipeline\ActionResult.cs" />
+    <Compile Include="ActionPipeline\ActionResultExtensions.cs" />
+    <Compile Include="ActionPipeline\IWindowLocator.cs" />
+    <Compile Include="ActionPipeline\WindowExecuteException.cs" />
+    <Compile Include="ActionPipeline\WindowLocator.cs" />
+    <Compile Include="Actions\ControlClickAction.cs" />
+    <Compile Include="Actions\HighlightLocatorAction.cs" />
+    <Compile Include="Actions\WaitConditions.cs" />
+    <Compile Include="Actions\WindowLocatorException.cs" />
+    <Compile Include="Application\IApplicationLauncher.cs" />
+    <Compile Include="Application\IApplicationWindowHandler.cs" />
+    <Compile Include="Actions\WaitForWindowAction.cs" />
+    <Compile Include="Control\ControlNotAvailableException.cs" />
+    <Compile Include="Helpers\ITokenManager.cs" />
+    <Compile Include="Helpers\TokenManager.cs" />
+    <Compile Include="Helpers\Waiter.cs" />
+    <Compile Include="Actions\ApplicationAttachAction.cs" />
+    <Compile Include="Steps\DataSteps.cs" />
+    <Compile Include="Actions\EnterDataAction.cs" />
+    <Compile Include="Window\IWindowProvider.cs" />
+    <Compile Include="Control\IControlProvider.cs" />
+    <Compile Include="Factory\FactoryBase.cs" />
+    <Compile Include="Factory\IFactory.cs" />
+    <Compile Include="Extensions\AttributeExtensions.cs" />
+    <Compile Include="Mapper\IMapper.cs" />
+    <Compile Include="Mapper\MapperBase.cs" />
+    <Compile Include="PropertyHandlers\WindowPropertyData.cs" />
+    <Compile Include="Steps\ControlSteps.cs" />
+    <Compile Include="Control\ControlDescription.cs" />
+    <Compile Include="Control\ControlExecuteException.cs" />
+    <Compile Include="PropertyHandlers\ControlPropertyData.cs" />
+    <Compile Include="Validation\ItemValidation.cs" />
+    <Compile Include="PropertyHandlers\IPropertyData.cs" />
+    <Compile Include="PropertyHandlers\PropertyDataBase.cs" />
+    <Compile Include="Steps\StepBase.cs" />
+    <Compile Include="Control\ExpressionData.cs" />
+    <Compile Include="Window\IActiveCheck.cs" />
+    <Compile Include="Window\IWindowControlHandler.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Control\ControlBuilderContext.cs" />
+    <Compile Include="Control\ControlFactory.cs" />
+    <Compile Include="Control\ControlLocatorException.cs" />
+    <Compile Include="Window\IWindowMapper.cs" />
+    <Compile Include="Application\ApplicationFactory.cs" />
+    <Compile Include="Application\ApplicationMapper.cs" />
+    <Compile Include="Application\ApplicationBase.cs" />
+    <Compile Include="Application\IApplicationMapper.cs" />
+    <Compile Include="Configuration\ApplicationFactoryConfigurationElement.cs" />
+    <Compile Include="Extensions\StringLookupExtensions.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Application\ApplicationExecutionException.cs" />
+    <Compile Include="Configuration\ExcludeAssembly.cs" />
+    <Compile Include="Configuration\ExcludeAssemblyCollection.cs" />
+    <Compile Include="Configuration\ISettings.cs" />
+    <Compile Include="Configuration\ExcludeAssemblyElement.cs" />
+    <Compile Include="ActionPipeline\ControlLocater.cs" />
+    <Compile Include="ActionPipeline\IAction.cs" />
+    <Compile Include="ActionPipeline\IActionPipelineService.cs" />
+    <Compile Include="ActionPipeline\IActionRepository.cs" />
+    <Compile Include="ActionPipeline\IControlLocator.cs" />
+    <Compile Include="ActionPipeline\ILocatorAction.cs" />
+    <Compile Include="ActionPipeline\IPostAction.cs" />
+    <Compile Include="ActionPipeline\IPreAction.cs" />
+    <Compile Include="Configuration\Settings.cs" />
+    <Compile Include="Configuration\SpecBindConfigurationSection.cs" />
+    <Compile Include="Logging\SpecFlowLogger.cs" />
+    <Compile Include="Actions\WindowLocatorAction.cs" />
+    <Compile Include="Steps\WindowSteps.cs" />
+    <Compile Include="Validation\IValidationComparer.cs" />
+    <Compile Include="Actions\ActionBase.cs" />
+    <Compile Include="Actions\ActionContext.cs" />
+    <Compile Include="Actions\ApplicationExecuteAction.cs" />
+    <Compile Include="Actions\ContextActionBase.cs" />
+    <Compile Include="Application\IApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ActionPipeline\ActionPipelineService.cs" />
+    <Compile Include="Steps\ApplicationSteps.cs" />
+    <Compile Include="Context\IContext.cs" />
+    <Compile Include="Steps\ContainerBuilderSteps.cs" />
+    <Compile Include="Context\Context.cs" />
+    <Compile Include="Control\ControlLocatorAttribute.cs" />
+    <Compile Include="Window\WindowBase.cs" />
+    <Compile Include="Window\WindowBuilderBase.cs" />
+    <Compile Include="Window\WindowMapper.cs" />
+    <Compile Include="Window\IWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

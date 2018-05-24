@@ -1,0 +1,11 @@
+*.suo
+bin
+obj
+Debug
+Release
+*.feature.cs
+*.opendb
+*.db
+*.user
+TestResults
+packages

@@ -229,10 +229,6 @@ namespace SpecBind.Control
                     {
                         slots[i] = Expression.Convert(context.Window.Expression, context.Window.Type);
                     }
-                    //else if (context.Application.Type.IsAssignableFrom(parameterType))
-                    //{
-                    //    slots[i] = Expression.Convert(context.Application.Expression, context.Application.Type);
-                    //}
                     else
                     {
                         slots[i] = this.FillConstructorParameter(parameterType, context.ParentControl, context.RootLocator);
